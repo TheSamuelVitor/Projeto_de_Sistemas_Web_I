@@ -1,20 +1,24 @@
-var qtdprestacao = document.getElementById("qtdPrestacao");
-var valor = document.getElementById("valor");
-var divPrestacoes = document.getElementById("prestacoes")
-var mensagem = document.getElementById("mensagem")
+var divPrestacoes = document.getElementById("prestacoes");
+var mensagem = document.getElementById("mensagem");
+var botao = document.getElementById("calcula");
 
-if (qtdprestacao.value > 5) {
-  console.log(qtdprestacao.value)
-  mensagem.innerText = "Aviso! Quantidade de prestacoes excedendo 5"
-}
-
-function calcula() {
-  console.log(qtdprestacao.value)
-  console.log(valor.value)
-
-  for (let index = 0; index < qtdprestacao.value; index++) {
-    const prestacao = document.createElement("p")
-    prestacao.innerText = `Parcelas no valor de ${(valor.value/qtdprestacao.value).toFixed(2)}`
-    document.body.appendChild(prestacao)
+botao.addEventListener("click", (e) => {
+  
+  var qtdprestacao = parseInt(document.getElementById("qtdPrestacao").value);
+  var valor = parseFloat(document.getElementById("valor").value);
+  divPrestacoes.innerText = "";
+  
+  if (qtdprestacao >= 5) {
+    valor = valor + valor * 0.1;
+    mensagem.innerText = `Aviso! Como a quantidade de prestacoes é maior que 5
+      O produto sofrerá um aumento de 10%`;
   }
-}
+
+  e.preventDefault();
+  for (let index = 1; index <= qtdprestacao; index++) {
+    textoAnterior = divPrestacoes.innerText;
+    divPrestacoes.innerText =
+    textoAnterior +
+      `${index}° Parcela no valor de ${(valor / qtdprestacao).toFixed(2)}\n`;
+  }
+});

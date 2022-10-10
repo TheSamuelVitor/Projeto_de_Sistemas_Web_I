@@ -4,31 +4,32 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Calculo de Prestacoes</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <h1>Calculo de Prestacoes</h1>
+    <h1>Calculo de Prestações</h1>
 
-    <form class="formulario" onsubmit="calcula()" >
+    <form class="formulario">
       <label for="valor">Valor geral</label>
       <input placeholder="Valor" type="number" id="valor" />
-
       <label for="qtdPrestacao">Quantidade de Prestações</label>
       <input
         placeholder="Quantidade de prestacoes"
         type="number"
         id="qtdPrestacao"
       />
-
-      <div id="mensagem">
-
+      <div class="acoes">
+        <button id="calcula" class="calcula">Calcula</button>
       </div>
-
-      <input type="submit" value="Calcula" class="calcula">
     </form>
 
-    <div id="prestacoes"></div>
+    <section class="prestacoes">
+      <h2>Prestacoes</h2>
+      <div id="mensagem"></div>
+      <div id="prestacoes"></div>
+    </section>
+
     <script src="script.js"></script>
   </body>
 </html>
