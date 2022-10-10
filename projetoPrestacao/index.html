@@ -1,21 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <input placeholder="valor" type="number" id="valor">
-  <input placeholder="quantidade de prestacoes" type="number" id="qtdPrestacao">
-  <button onclick="calcula()">calcula</button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>Calculo de Prestacoes</h1>
 
-  <div id="prestacoes">
+    <form class="formulario" onsubmit="calcula()" >
+      <label for="valor">Valor geral</label>
+      <input placeholder="Valor" type="number" id="valor" />
 
+      <label for="qtdPrestacao">Quantidade de Prestações</label>
+      <input
+        placeholder="Quantidade de prestacoes"
+        type="number"
+        id="qtdPrestacao"
+      />
 
-  </div>
-  <script src="script.js"></script>
-</body>
+      <div id="mensagem">
+
+      </div>
+
+      <input type="submit" value="Calcula" class="calcula">
+    </form>
+
+    <div id="prestacoes"></div>
+    <script src="script.js"></script>
+  </body>
 </html>
