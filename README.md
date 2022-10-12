@@ -8,7 +8,6 @@ Repositório feito para guardar as atividades da disciplina da faculdade com o n
 
 By
 
-
-Kayo Erysson da Silva Alves
-Rafael Candido Lacerda Carvalho
+Kayo Erysson da Silva Alves <br>
+Rafael Candido Lacerda Carvalho <br>
 Samuel Vitor de França Veras
