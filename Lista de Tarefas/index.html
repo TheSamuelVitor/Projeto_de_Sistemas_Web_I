@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Rafael Carvalho, Samuel Vitor, Kayo Erysson" />
+    <title>ToDo List</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+      rel="shortcut icon"
+      type="imagex/png"
+      href="https://cdn-icons-png.flaticon.com/512/114/114903.png"
+    />
+  </head>
+  <body>
+    <h1 style="text-align: center">Lista de Tarefas</h1>
+    <header>
+      <br /><label for="tarefa">Digite a tarefa a ser realizada:</label><br />
+      <input id="tarefa" type="text" placeholder="Ex: Lavar o carro" /><br />
+      <button onclick="adicionarTarefa()">Adicionar</button>
+      <button onclick="limparTarefa()">Limpar Tarefas</button>
+    </header>
+    <section>
+      <h2 id="pendentes">Tarefas Pendentes</h2>
+      <div id="tarefas"></div>
+    </section>
+    <script src="script.js"></script>
+  </body>
+</html>
