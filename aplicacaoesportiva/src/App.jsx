@@ -1,5 +1,6 @@
 import "./App.css";
 import Titulo from "./components/teste.js";
+import Match from "./components/Match/Match";
 
 function App() {
   return (
@@ -7,6 +8,8 @@ function App() {
       <header className="App-header">
         <Titulo></Titulo>
       </header>
+
+      <Match />
     </div>
   );
 }
