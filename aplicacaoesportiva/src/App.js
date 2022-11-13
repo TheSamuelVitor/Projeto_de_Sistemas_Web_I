@@ -3,11 +3,6 @@ import "./App.css";
 import Titulo from "./components/titulo";
 
 function App() {
-  const campeonatos = [];
-
-  client.get("v1/campeonatos").then((response) => {
-    campeonatos.push(response.data);
-  });
 
   return (
     <div className="App">
