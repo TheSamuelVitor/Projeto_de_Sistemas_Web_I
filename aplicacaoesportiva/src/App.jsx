@@ -1,6 +1,6 @@
-import client from "./api/connection";
 import "./App.css";
-import Titulo from "./components/titulo";
+import Titulo from "./components/teste.js";
+import Match from "./components/Match/Match";
 
 function App() {
 
@@ -9,6 +9,8 @@ function App() {
       <header className="App-header">
         <Titulo></Titulo>
       </header>
+
+      <Match />
     </div>
   );
 }

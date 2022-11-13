@@ -4,6 +4,8 @@ Repositório feito para guardar as atividades da disciplina da faculdade com o n
 
 - Simulador de parcelamento e juros.
 - Lista de tarefas
+- Twitter Trends
+- Jogos e placar esportivo
 
 
 By
