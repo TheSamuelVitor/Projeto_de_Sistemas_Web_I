@@ -1,6 +1,5 @@
 function Titulo() {
-  const titulo = <h1>Aplicacao Esportiva</h1>;
-  return titulo;
+  return <h1>Football Matches</h1>;
 }
 
 export default Titulo;
