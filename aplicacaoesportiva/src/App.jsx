@@ -16,10 +16,10 @@ function App() {
       </main>    
 
       <footer className="mt-5 text-center">
-        Desenvolvido por: <br></br>
-        Michele Araujo <br></br>
-        Rafael Carvalho  <br></br>
-        Samuel Vitor 
+        Desenvolvido por:
+        Michele Araujo
+        Rafael Carvalho
+        Samuel Vitor
       </footer>
     </Router>
   );
