@@ -1,34 +1,51 @@
-import "./Championships.css";
-import client from "../../api/connection";
-import { useState } from "react";
+import { useEffect, useState } from 'react';
+import './Championships.css'
 
-function Championships() {
-  const [campeonatos, setCampeonatos] = useState('')
+//const apiKey = 'test_706fb8737ecacbade477c8040c46c3';
+const apiKey = 'live_aedc8c48727d14e432fa4984a6db95';
 
-  client.get("v1/campeonatos").then((response) => {
-    console.log(response.data)
-    setCampeonatos(response.data.nome)
-  });
+function Championships({setPartidas}) {
 
-  return (
-    <div className="row">
-      <div className="col-5 mx-auto">
-        <div className="card shadow ">
-          <div className="card-body flex-column text-center =">
-            {campeonatos}
-            <img
-              className="logo-time my-4"
-              src="https://api.api-futebol.com.br/images/competicao/brasileiro-seriea.png"
-              alt=""
-            />
-            <div className="mt-2 mx-auto text-center">
-              38° Rodada
+    const [campeonato, setCampeonato] = useState({})
+    
+    useEffect(() => {
+        const getChampionship = async () => {
+            var api = 'https://api.api-futebol.com.br/v1/campeonatos/10'; 
+            const options = {
+              method: 'GET',
+              headers: {
+                cookie: 'PHPSESSID=jdjtchg10d1pv76rv1o5rrhdle',
+                Authorization: `Bearer ${apiKey}`
+              }
+            };
+            var data = await fetch(api, options).then(response=>response.json())
+            setCampeonato(data);
+        }
+        getChampionship();
+    }, [])
+
+    async function carregarRodada() {
+        var api = `https://api.api-futebol.com.br/v1/campeonatos/${campeonato.campeonato_id}/rodadas/${campeonato.rodada_atual.rodada}`;     
+        const options = {
+          method: 'GET',
+          headers: {
+            cookie: 'PHPSESSID=jdjtchg10d1pv76rv1o5rrhdle',
+            Authorization: `Bearer ${apiKey}`
+          }
+        };
+        var data = await fetch(api, options).then(response=>response.json())
+        setPartidas(data.partidas);    
+      }
+        
+    return (     
+        <div className="champ card shadow mx-auto mb-5">
+            <div className="card-body flex-column text-center =">
+                <h6 className="fw-bold mt-2">Brasileirão Série B</h6>                         
+                <img className="logo mt-4 mb-2" src={campeonato.logo} alt="" />                                                             
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+            <button className="btn btn-dark mb-3 mx-auto" onClick={carregarRodada}>Carregar partidas</button>
+        </div>        
+    );
 }
 
 export default Championships;

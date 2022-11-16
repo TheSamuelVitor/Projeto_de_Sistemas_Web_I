@@ -1,27 +1,22 @@
 import "./App.css"
-import Matches from "./pages/Matches"
-import Home from "./pages/Home"
+import Match from "./components/Match/Match"
 import Header from "./components/Header/Header"
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import Footer from "./components/Footer/Footer"
+import React, {useState, useEffect} from 'react'
+import Championships from "./components/Championships/Championships"
 
 function App() {
+  const [partidas, setPartidas] = useState([])
   return (
-    <Router className="App container">
+    <div className="App container">
       <Header />
       <main className="container pb-5">
-        <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route path="/matches" element={<Matches />} />
-        </Routes>  
+        <Championships setPartidas={setPartidas} />        
+        <Match partidas={partidas} />
       </main>    
 
-      <footer className="mt-5 text-center">
-        Desenvolvido por:
-        Michele Araujo
-        Rafael Carvalho
-        Samuel Vitor
-      </footer>
-    </Router>
+      <Footer />
+    </div>
   );
 }
 

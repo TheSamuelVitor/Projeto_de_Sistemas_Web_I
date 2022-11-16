@@ -1,29 +1,26 @@
 import './Match.css'
 
-function Match() {
+function Match({partidas}) {   
     return (            
-        <div className="col-3 mx-auto">
-          <div className="card shadow">
+      <div className="d-flex flex-wrap mx-auto">
+        {partidas.map((partida) => 
+          <div key={partida.partida_id} className="mx-auto mb-5">          
+          <div className="partida card shadow">
             <div className="card-body d-flex flex-column">
-                <h6 className="text-center">21:30</h6>
-                <h6 className="text-center">09/11/2022</h6>
-              <div className="times text-center mx-auto d-flex">
-                <div className="time1">
-                    <img className="logo-time" src="https://logodetimes.com/times/selecao-brasileira-brasil/logo-selecao-brasileira-brasil-2048.png" alt="" />                   
-                </div>
-                    <span className="mx-auto my-auto">X</span>
-                <div className="time1">
-                    <img className="logo-time" src="https://logodetimes.com/times/selecao-brasileira-brasil/logo-selecao-brasileira-brasil-2048.png" alt="" />         
-                </div>                
-              </div>
-              <div className="d-flex mt-2 mx-auto">
-                <h6 className="mt-2">Brasil <span>5</span></h6>
-                    <span className="my-auto mx-2">X</span>
-                <h6 className="mt-2"><span>1</span> Brasil</h6>
-              </div>              
+                <h6 className="text-center">{partida.hora_realizacao}</h6>
+                <h6 className="text-center">{partida.data_realizacao}</h6>
+                {console.log(partida.time_mandante.escudo)}
+              <div className="text-center d-flex">                
+                  <img className="logo-time mx-auto" src={partida.time_mandante.escudo} alt="" />                               
+                  <span className="mx-auto my-auto">X</span>                               
+                  <img className="logo-time mx-auto" src={partida.time_visitante.escudo} alt="" />                                       
+              </div>           
+                <h6 className="mt-3 mx-auto text-center">{partida.placar}</h6>                         
             </div>
           </div>
-        </div>   
+        </div> 
+        )} 
+      </div> 
     );
 }
 
